@@ -1,0 +1,23 @@
+{
+  "name": "Pilot Checklist",
+  "short_name": "Checklist",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#340202",
+  "theme_color": "#4cc2ff",
+  "description": "Pilot checklist app with tabs, collapsible sections, day/night theme, and offline support.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

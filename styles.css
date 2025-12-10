@@ -1,0 +1,217 @@
+:root {
+  --bg: #340202;
+  --panel: #0e1bb3;
+  --text: #f8eeee;
+  --muted: #0cac51;
+  --accent: #4cc2ff;
+  --border: #0e62d6;
+  --ok: #49d17a;
+  --warn: #ffc048;
+  --danger: #ff6b6b;
+  --focus: #ffcc00;
+}
+
+/* Day Mode overrides */
+body.day {
+  --bg: #5c0707;
+  --panel: #010f0a38;
+  --text: #460a82;
+  --muted: #230780;
+  --accent: #0077cc;
+  --border: #7e7272;
+  --ok: #2e8b57;
+  --warn: #cc8800;
+  --danger: #0c9b4c;
+  --focus: #be5711;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  line-height: 1.45;
+}
+
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Horizontal floating tabs */
+.tabs-wrap {
+  position: sticky; /* floats with scroll */
+  top: 0;
+  z-index: 99;
+  background: linear-gradient(0deg, rgba(15,19,24,0.85), rgba(15,19,24,0.95));
+  backdrop-filter: blur(6px);
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 4px;
+}
+.tab {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.tab[aria-selected="true"] {
+  background: #1a2029;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.tab:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Panels */
+.panel {
+  display: none;
+  padding: 12px 4px 4px 4px;
+  margin-top: 8px;
+}
+.panel.active {
+  display: block;
+}
+
+/* Collapsed sections (accordion-like) */
+details {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text);
+}
+summary::-webkit-details-marker { display: none; }
+.chev {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+  flex: 0 0 auto;
+}
+details[open] .chev { transform: rotate(45deg); }
+
+.group-note {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.items {
+  padding: 8px 14px 14px 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+/* Checklist item */
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 10px;
+  align-items: center;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #11161d;
+}
+.label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.action {
+  font-size: 12px;
+  color: var(--muted);
+}
+.control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn {
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0c1117;
+  color: var(--text);
+  cursor: pointer;
+}
+.btn.done {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.btn.warn {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+/* Footer note */
+.footnote {
+  margin: 18px 4px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.flex {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Small screens tweak */
+@media (max-width: 520px) {
+  .items { grid-template-columns: 1fr; }
+  .item { grid-template-columns: 1fr; }
+}

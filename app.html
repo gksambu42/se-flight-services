@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pilot Checklist — N4546R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="theme-color" content="#4cc2ff" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div>
+        <div class="title">N4546R</div>
+        <div class="sub">DR. SE FLIGHT SERVICES</div>
+      </div>
+      <div class="flex">
+        <button class="btn" id="expandAll" aria-label="Expand all sections">Expand all</button>
+        <button class="btn" id="collapseAll" aria-label="Collapse all sections">Collapse all</button>
+        <button class="btn" id="themeToggle" aria-pressed="false" aria-label="Toggle Day/Night">Toggle Day/Night</button>
+      </div>
+    </div>
+
+    <!-- Floating horizontal tabs -->
+    <div class="tabs-wrap" role="tablist" aria-label="Checklist sections">
+      <div class="tabs">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="panel-preflight" id="tab-preflight">Preflight</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-beforestart" id="tab-beforestart">Before start</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-enginestart" id="tab-enginestart">Engine start</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-taxi" id="tab-taxi">Taxi</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-runup" id="tab-runup">Run-up</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-takeoff" id="tab-takeoff">Takeoff</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-cruise" id="tab-cruise">Cruise</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-descent" id="tab-descent">Descent</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-landing" id="tab-landing">Landing</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-afterlanding" id="tab-afterlanding">After landing</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-shutdown" id="tab-shutdown">Shutdown</button>
+      </div>
+    </div>
+
+    <!-- Panels: each contains collapsed details sections -->
+    <div class="panel active" id="panel-preflight" role="tabpanel" aria-labelledby="tab-preflight">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Preflight overview <span class="group-note">Docs, fuel, controls</span></summary>
+        <div class="items">
+          <div class="item">
+            <div>
+              <div class="label">Documents (AROW)</div>
+              <div class="action">Airworthiness, Registration, Operating limits, Weight & Balance — Verify onboard</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Control lock</div>
+              <div class="action">Remove and stow properly</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Master switch</div>
+              <div class="action">ON → Fuel quantity check → OFF</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Flaps</div>
+              <div class="action">Extend to inspect flap/aileron linkages</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Tach/Hobbs time</div>
+              <div class="action">Record prior to start</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Exterior walkaround <span class="group-note">Wing, nose, empennage</span></summary>
+        <div class="items">
+          <div class="item">
+            <div>
+              <div class="label">Right wing</div>
+              <div class="action">Fuel drain, quantity, cap secure; tire/brake; flap/aileron free; lights; tie-down removed</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Nose/engine</div>
+              <div class="action">Oil level; cowling secure; prop condition; nose strut; brake fluid; fuel sump</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Left wing</div>
+              <div class="action">As right + pitot/static clear; stall warning functional; tie-down removed</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="label">Empennage</div>
+              <div class="action">Elevator/rudder free; hinges/pins secure; tail tie-down removed</div>
+            </div>
+            <div class="control"><button class="btn">Mark done</button></div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-beforestart" role="tabpanel" aria-labelledby="tab-beforestart">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Cockpit prep <span class="group-note">Seats, breakers, controls</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Seats/Belts</div><div class="action">Adjust, lock, and secure</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Avionics master</div><div class="action">OFF</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Parking brake</div><div class="action">SET</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Flight controls</div><div class="action">Free and correct</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Circuit breakers</div><div class="action">IN — verify none tripped</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-enginestart" role="tabpanel" aria-labelledby="tab-enginestart">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Starting procedure <span class="group-note">Fuel, mixture, prime</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Master switch</div><div class="action">ON</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Beacon</div><div class="action">ON</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Mixture</div><div class="action">FULL RICH</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Fuel pump</div><div class="action">ON → Verify fuel pressure</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Carb heat</div><div class="action">OFF</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Prime</div><div class="action">As required (per ambient/engine condition)</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Throttle</div><div class="action">Open ~¼ inch</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Prop area</div><div class="action">CLEAR — verbal and visual</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Starter</div><div class="action">ENGAGE — release after start</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Oil pressure</div><div class="action">CHECK within 30 seconds</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-taxi" role="tabpanel" aria-labelledby="tab-taxi">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Taxi checks <span class="group-note">Brakes, instruments, radios</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Brakes</div><div class="action">CHECK effectiveness early</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Instruments</div><div class="action">Attitude, turn coordinator, compass — tracking correctly</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Radios</div><div class="action">ON and set frequencies/volumes</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Altimeter</div><div class="action">SET to local (field elevation/ALT)</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-runup" role="tabpanel" aria-labelledby="tab-runup">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Run-up at 1800 RPM <span class="group-note">Mags, carb heat, idle</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Engine gauges</div><div class="action">Temperatures/pressures within limits</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Magnetos</div><div class="action">≤125 RPM drop, ≤50 RPM difference</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Carb heat</div><div class="action">ON → observe drop → OFF</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Idle</div><div class="action">CHECK — set for smooth idle</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Flight controls</div><div class="action">Free and correct — final check</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Trim</div><div class="action">SET for takeoff</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Flaps</div><div class="action">SET per POH/conditions</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Instruments</div><div class="action">Altimeter, DG/HSI, heading bug — CHECK/SET</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-takeoff" role="tabpanel" aria-labelledby="tab-takeoff">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Takeoff roll and rotation <span class="group-note">Power, rotate, climb</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Brakes</div><div class="action">RELEASE — verify rolling</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Throttle</div><div class="action">FULL — verify power</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Engine instruments</div><div class="action">GREEN — T&P nominal</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Airspeed alive</div><div class="action">CONFIRM indication</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Rotate</div><div class="action">65 mph (PA-28-140 typical)</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Climb</div><div class="action">Vy 85 mph / Vx 74 mph (conditions permitting)</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-cruise" role="tabpanel" aria-labelledby="tab-cruise">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Cruise <span class="group-note">Power, trim, nav</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Power</div><div class="action">Set per POH</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Mixture</div><div class="action">Lean as required</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Instruments</div><div class="action">Check engine and flight instruments</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-descent" role="tabpanel" aria-labelledby="tab-descent">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Descent <span class="group-note">Power, mixture, briefing</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Power</div><div class="action">Reduce and plan descent profile</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Mixture</div><div class="action">Enrich as required</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Approach briefing</div><div class="action">Runway, pattern, winds, go-around plan</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-landing" role="tabpanel" aria-labelledby="tab-landing">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Landing <span class="group-note">GUMPS, speeds</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">GUMPS</div><div class="action">Gas, Undercarriage, Mixture, Prop, Switches</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Carb heat</div><div class="action">As required</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Final</div><div class="action">Speed per POH and conditions</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-afterlanding" role="tabpanel" aria-labelledby="tab-afterlanding">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> After landing <span class="group-note">Clean up</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Flaps</div><div class="action">RETRACT</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Carb heat</div><div class="action">OFF</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Transponder</div><div class="action">STBY</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="panel-shutdown" role="tabpanel" aria-labelledby="tab-shutdown">
+      <details>
+        <summary><span class="chev" aria-hidden="true"></span> Shutdown <span class="group-note">Avionics, mixture, mags</span></summary>
+        <div class="items">
+          <div class="item"><div><div class="label">Avionics master</div><div class="action">OFF</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Mixture</div><div class="action">IDLE CUTOFF — engine stops</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Magnetos</div><div class="action">OFF — key removed</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+          <div class="item"><div><div class="label">Master switch</div><div class="action">OFF — secure aircraft</div></div><div class="control"><button class="btn">Mark done</button></div></div>
+        </div>
+      </details>
+    </div>
+
+    <p class="footnote" id="statusNote" aria-live="polite">Night theme. No items marked.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
